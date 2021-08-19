@@ -1,0 +1,27 @@
+.card {
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-body h5 {
+  font-weight: 600;
+  color: #4078c0;
+}
+
+.card-body {
+  background-color: #f2f6ff;
+}
+
+.modal h3 {
+  color: #4078c0;
+  font-weight: 600;
+}
+
+.placeholder {
+  margin-top: 10px;
+  background-color: unset;
+}

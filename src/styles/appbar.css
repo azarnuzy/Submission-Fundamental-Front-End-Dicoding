@@ -1,0 +1,9 @@
+header {
+  padding: 16px;
+  background-color: #234cad;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.app-bar h2 {
+  font-weight: bolder;
+}

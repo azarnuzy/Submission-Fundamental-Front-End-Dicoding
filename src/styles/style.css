@@ -1,0 +1,26 @@
+@import "./appbar.css";
+@import "./recipelist.css";
+@import "./searchbar.css";
+@import "./category.css";
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+main {
+  width: 90%;
+  max-width: 800px;
+  margin: 32px auto;
+}
+
+a:link {
+  text-decoration: none;
+}
