@@ -3,6 +3,7 @@ import "../components/food-list.js";
 import "../components/detail-food.js";
 import "../components/category-food.js";
 import DataSource from "../data/data-source.js";
+import $ from "jquery";
 
 const main = () => {
   const searchElement = document.querySelector("#searchElement");
@@ -10,6 +11,7 @@ const main = () => {
   const foodListElement = document.querySelector("food-list");
   const foodDetailElement = document.querySelector("#modalFoodContent");
   const menuCategory = document.querySelector(".options");
+
   const onButtonSearchClicked = () => {
     DataSource.searchFood(
       searchElement.value,
@@ -31,14 +33,10 @@ const main = () => {
     const categories = document.createElement("div");
     categories.classList.add("category-menus", "hidden");
     categories.innerHTML = "";
-    let iterator = 1;
     results.forEach((category) => {
       const { strCategory } = category;
-      if (iterator >= 6) {
-        iterator /= 6;
-      }
       categories.innerHTML += `
-          <a href="#" class="category-menu category-${iterator++}">${strCategory}</a>
+          <a href="#" class="category-menu ">${strCategory}</a>
         `;
     });
 
@@ -56,14 +54,10 @@ const main = () => {
     const categories = document.createElement("div");
     categories.classList.add("areas-menus", "hidden");
     categories.innerHTML = "";
-    let iterator = 1;
     results.forEach((area) => {
       const { strArea } = area;
-      if (iterator >= 6) {
-        iterator /= 6;
-      }
       categories.innerHTML += `
-            <a href="#" class="areas-menu category-${iterator++}">${strArea}</a>
+            <a href="#" class="areas-menu">${strArea}</a>
           `;
     });
 
@@ -110,13 +104,10 @@ const main = () => {
       }
     }
 
-    const categoryMenu = document.querySelector(".category-menus");
-    const areasMenu = document.querySelector(".areas-menus");
-
     if (target == "Categories") {
-      categoryMenu.classList.toggle("hidden");
+      $(".category-menus").slideToggle();
     } else if (target == "Areas") {
-      areasMenu.classList.toggle("hidden");
+      $(".areas-menus").slideToggle();
     }
   };
 
@@ -185,8 +176,8 @@ const main = () => {
     });
   };
 
-  buttonSearchElement.addEventListener("click", onButtonSearchClicked);
-  document.addEventListener("click", onButtonClicked);
+  $(buttonSearchElement).click(onButtonSearchClicked);
+  $(document).click(onButtonClicked);
 };
 
 export default main;

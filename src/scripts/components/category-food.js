@@ -23,7 +23,8 @@ class CategoryFood extends HTMLElement {
             justify-content-center
             text-center
           "
-        ></div>
+        >
+        </div>
       </div>
     </div>
     `;
